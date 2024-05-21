@@ -17,6 +17,10 @@ class HotelController extends Controller
     public function show($id)
     {
         $hotel = Hotel::findOrFail($id);
+        // Transformar los servicios en un formato adecuado para el frontend
+        $hotel->servicios = json_decode($hotel->servicios);
+
+
         return response()->json($hotel);
     }
 
