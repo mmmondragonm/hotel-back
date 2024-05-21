@@ -36,10 +36,12 @@ Route::post('register', [AuthController::class, 'register']); // Registrar un nu
   Route::get('servicios', [ServiciosController::class, 'index']); // listado un nuevo hotel
   
   // Rutas para gestionar hoteles
-  Route::get('hoteles', [HotelController::class, 'index']); // listado un nuevo hotel
+  Route::get('hoteles', [HotelController::class, 'index']); // listado de hoteles
+  Route::get('hoteles/{id}', [HotelController::class, 'show']); // Ver un hotel
   Route::post('hoteles', [HotelController::class, 'store']); // Crear un nuevo hotel
   Route::put('hoteles/{id}', [HotelController::class, 'update']); // Modificar un hotel existente
   Route::put('hoteles/{id}/status', [HotelController::class, 'toggleStatus']); // Habilitar o deshabilitar un hotel
+  Route::delete('hoteles/{id}', [HotelController::class, 'destroy']); // Eliminar un nuevo hotel
   
   // Rutas para gestionar habitaciones
   Route::post('habitaciones', [HabitacionController::class, 'store']); // Asignar una habitación disponible a un hotel

@@ -30,7 +30,6 @@ class HotelController extends Controller
             'pais' => 'required',
             'ciudad' => 'required',
             'direccion' => 'required',
-            'activo' => 'required|boolean',
             // 'imagenes' => 'nullable|array', // Cambiado a array para almacenar múltiples URLs de imágenes
         ]);
 
@@ -56,7 +55,7 @@ class HotelController extends Controller
           'fecha_apertura' => $request->input('fecha_apertura'),
           'pagina_web' => $request->input('pagina_web'),
           // 'imagenes' => $imageUrls,
-          'activo' => $request->activo, // URL completa de la imagen
+          'activo' => true, // URL completa de la imagen
         ]);
       
         return response()->json($hotel, 201);
