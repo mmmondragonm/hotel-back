@@ -77,8 +77,13 @@ class HotelController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'nombre' => 'required|string|max:255',
-            'activo' => 'required|boolean',
+          'nombre' => 'required|string|max:255',
+          'clasificacion' => 'required',
+          'email' => 'required',
+          'telefono' => 'required',
+          'pais' => 'required',
+          'ciudad' => 'required',
+          'direccion' => 'required',
         ]);
 
         $hotel = Hotel::findOrFail($id);
